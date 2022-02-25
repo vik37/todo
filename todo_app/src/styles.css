@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-size: 18px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+}
+h2,h3,h5,h6{
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+button{
+  cursor: pointer;
+}
+header,fieldset,legend{
+  background-color: rgb(9, 40, 75);
+}
+.error-container{
+  height: 30px;
+}
+.error-msgs{
+  color:rgb(230, 9, 9);
+  font-size: 0.76rem;
+  letter-spacing: 0.1rem;
+}
+.enter-exit{
+  width: 290px;
+  height: 90px;
+  font-size: 2.6rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: rgb(0, 0, 0);
+  border: none;
+  text-shadow: 2px -2px 4px rgb(173, 250, 121);
+  letter-spacing: 0.8rem;
+  border-radius: 10px;
+  transition: color 1.6s;
+}
+.enter-exit:hover{
+  color: rgba(240, 240, 240,0.4);
+  border: 1px solid rgb(250, 248, 248);
+  text-shadow: none;
+  box-shadow: 1px 1px 12px 2px rgba(240, 240, 240,0.4);
+}
+.enter-exit:active{
+  box-shadow: 0 -2px 8px 2px rgba(240, 240, 240,0.4)inset;
+}

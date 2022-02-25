@@ -1,0 +1,77 @@
+<main class="todo-main">
+  <section class="todo-active-section">
+    <form #todoForm="ngForm" (submit)="addTodo(todoForm)">
+      <fieldset>
+        <legend>Add New</legend>
+        <input type="text"
+                class="add-todo-form-name"
+                placeholder="Name of task..."
+                #nameRef="ngModel"
+                name="name"
+                required
+                minlength="5"
+                ngModel
+        />
+          <div class="todo-form-date-container">
+            <div class="form-control">
+              <label for="todo-date">Add due date</label>
+              <input id="todo-date"
+                      class="add-todo-form-date"
+                      type="date"
+                      #dateRef="ngModel"
+                      name="date"
+                      required
+                      ngModel
+              />
+            </div>
+            <button class="btn-submit-add-todo"
+                    [disabled]="!todoForm.valid"
+                    type="submit">
+              &#x271A;
+            </button>
+
+          </div>
+          <div class="error-container">
+            <div class="error-msgs" *ngIf="nameRef.errors && nameRef.touched">
+              <span [hidden]="!nameRef.errors.required">Name is required</span>
+            </div>
+            <div class="error-msgs" *ngIf="nameRef.errors &&(nameRef.touched)">
+              <span [hidden]="!nameRef.errors.minlength">Name - minimum 5 charachters</span>
+            </div>
+            <div class="error-msgs" *ngIf="dateRef.errors && dateRef.touched">
+              <span [hidden]="!dateRef.errors.required">Date is required</span>
+            </div>
+          </div>
+      </fieldset>
+    </form>
+    <section>
+      <div class="sort-buttons">
+        <button (click)="reset(1)" type="button">&#x21ba;</button>
+        <button (click)="sortAlphabet(2)" type="button">A-Z&#x2193;</button>
+        <button (click)="sortByDate(3)" type="button">by Date</button>
+      </div>
+      <div class="todo-active-container">
+        <div  *ngFor="let active of activeTodo">
+          <app-todo-active
+          [active-todo]="active"
+          (editTodoEvent)="editTodo($event)"
+          (deleteTodoEvent)="removeById($event)"
+          (changeToCompletedTodoEvent)="changeStatus($event)"
+        ></app-todo-active>
+        </div>
+      </div>
+
+    </section>
+    <button class="enter-exit" routerLink="/" type="button">EXIT</button>
+  </section>
+  <aside class="todo-completed-aside" >
+    <h3>Completed</h3>
+    <div *ngFor="let complate of complatedTodo">
+      <app-todo-completed
+        [complated-todo]="complate"
+    ></app-todo-completed>
+    </div>
+  </aside>
+</main>
+
+

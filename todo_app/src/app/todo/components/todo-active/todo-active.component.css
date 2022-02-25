@@ -1,0 +1,75 @@
+.todo-active-cards{
+  border: 2px solid transparent;
+  border-image: linear-gradient(90deg, rgb(65, 170, 230) 0%, rgba(63,93,158,1) 78%, rgb(236, 36, 216) 100%);
+  border-image-repeat:round;
+  border-image-outset: 10px;
+  border-image-slice: 38%;
+  box-shadow: 0 0 10px 2px rgb(44, 73, 240);
+}
+.todo-active-cards > header{
+  padding: 5px;
+}
+.todo-active-cards-buttons{
+  margin: 30px 0 10px 0;
+  display: flex;
+  justify-content: center;
+
+}
+.todo-active-cards-buttons > button{
+  border: none;
+  outline: none;
+  font-size: 0.8rem;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  padding: 3px 15px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  box-shadow: 0 0 5px 2px rgb(85, 4, 133);
+}
+.todo-active-cards-buttons > button:nth-child(1):hover{
+  background-color: rgb(8, 64, 117);
+}
+.todo-active-cards-buttons > button:nth-child(2):hover{
+  background-color: rgb(117, 8, 8);
+}
+.todo-active-cards-buttons > button:nth-child(3):hover{
+  background-color: rgb(121, 129, 4);
+}
+.todo-active-cards-enable{
+  background-color: rgba(211, 186, 104, 0.5);
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+.todo-active-cards-disable{
+  display: none;
+}
+input[type="text"]{
+  margin: 10px 0;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  outline: none;
+  height: 30px;
+}
+input[type="date"] {
+  background: transparent;
+  color: rgb(109, 3, 3);
+  border: none;
+  outline: none;
+}
+input[type="submit"]{
+  border: 1px solid rgb(0, 0, 0);
+  font-weight: bolder;
+  outline: none;
+  background-color: rgb(3, 49, 109);
+  color: rgb(255, 255, 255);
+  width: 40px;
+  align-self: center;
+  cursor: pointer;
+  padding: 1.7px;
+  margin-bottom: 3px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+input[type="submit"]:hover{
+  filter: invert(100%);
+}

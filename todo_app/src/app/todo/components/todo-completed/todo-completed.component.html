@@ -1,0 +1,10 @@
+<section *ngIf="todo !== null">
+  <header>
+    <h3>{{todo.name}}</h3>
+    <h6>{{todo.date|date}}</h6>
+  </header>
+  <footer>
+    <h4>Status: {{todo.status|enumTostring}}</h4>
+    <p>complete on: {{finishDate|date}}</p>
+  </footer>
+</section>

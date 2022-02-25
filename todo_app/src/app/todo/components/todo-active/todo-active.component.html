@@ -1,0 +1,31 @@
+
+<section class="todo-active-cards" *ngIf="todo !== null">
+  <header>
+    <h3>{{todo.name}}</h3>
+    <h6>{{todo.date|date}}</h6>
+  </header>
+  <div class="todo-active-cards-buttons">
+    <button (click)="editToggle()" type="button">edit</button>
+    <button (click)="sendIdValueForRemoving(todo.id)" type="button">delete</button>
+    <button (click)="sendIdValueForChangeStatus(todo.id)" type="button">complete</button>
+  </div>
+  <form #editTodoForm = "ngForm" (submit)="editSubmit(editTodoForm)"
+        [ngClass]="edit?'todo-active-cards-enable':'todo-active-cards-disable'">
+    <input
+          type="text"
+          placeholder="{{todo.name}}"
+          #nameRef="ngModel"
+          name="name"
+          ngModel/>
+    <input type="date"
+            #dateRef="ngModel"
+            name="dateTodo"
+            [(ngModel)]="todo.date"
+            ngModel/>
+    <input type="submit" value="add" />
+  </form>
+  <footer>
+    <h4>Status: {{todo.status|enumTostring}}</h4>
+  </footer>
+</section>
+

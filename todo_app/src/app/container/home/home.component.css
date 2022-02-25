@@ -1,0 +1,42 @@
+.main-home{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 100px;
+}
+.todo-nav{
+  width: 40%;
+  height: 55vh;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+}
+img{
+  margin-top: 10px;
+  width: 500px;
+  height: 320px;
+  filter:opacity(0.7);
+  border-radius: 60px;
+  box-shadow: 0 0 90px 1px rgb(250, 248, 248);
+}
+
+
+@media only screen and (max-width: 520px){
+  .main-home{
+    justify-content: flex-start;
+  }
+  .todo-nav{
+
+    width: 100%;
+  }
+  img{
+    width: 100%;
+    height: 240px;
+  }
+  button{
+    font-size: 1.8rem;
+    width: 220px;
+  }
+}

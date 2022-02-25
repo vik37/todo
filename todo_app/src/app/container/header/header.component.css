@@ -1,0 +1,38 @@
+header{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px 100px;
+  border-bottom: 1.2px solid rgb(255, 255, 255);
+}
+header>h5{
+  align-self: center;
+  letter-spacing: 6px;
+  font-size: 1.1rem;
+  text-decoration:dotted  rgba(255, 255, 255, 0.4) underline 0.01px;
+}
+h1{
+  font-size: 2.4rem;
+  color: rgb(100, 97, 97);
+  font-weight: bolder;
+  font-family:'Times New Roman', Times, serif;
+  text-shadow: 0 1px 1px rgb(255, 255, 255);
+  letter-spacing: 0.4rem;
+
+}
+@media only screen and (max-width: 768px)
+{
+  header{
+    padding: 5px;
+  }
+  header>h5{
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+}
+@media only screen and (max-width: 472px){
+  h1{
+    font-size: 1.8rem;
+  }
+}
